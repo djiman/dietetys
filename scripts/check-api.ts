@@ -25,7 +25,7 @@ async function main() {
   const response = await client.messages.create({
     model: "claude-sonnet-5",
     max_tokens: 32,
-    messages: [{ role: "user", content: "Réponds uniquement par: OK" }],
+    messages: [{ role: "user", content: "Réponds uniquement par: Hi Djiman! " }],
   });
 
   const text = response.content
