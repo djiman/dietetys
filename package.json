@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check:api": "tsx scripts/check-api.ts",
-    "generer:menu": "tsx scripts/generer-menu.ts"
+    "generer:menu": "tsx scripts/generer-menu.ts",
+    "menu": "tsx scripts/menu.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",

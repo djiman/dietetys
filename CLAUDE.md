@@ -72,6 +72,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 | `npx tsc --noEmit` | Vérification des types |
 | `npm run check:api` | Vérifie la clé API Anthropic |
 | `npm run generer:menu` | Génère trois menus réels (appels facturés) |
+| `npm run menu -- femme 30 165 60 modere perte` | Génère et affiche le menu d'un profil (appel facturé) |
 
 ## Avant de considérer une tâche terminée
 
