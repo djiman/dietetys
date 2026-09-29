@@ -22,9 +22,8 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 ## État actuel
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
-  nutritionnel, 44 tests).
-- À faire : validation de sortie, orchestrateur LLM, évaluations, route
-  API, frontend. Voir la spécification pour l'ordre des tâches restantes.
+  nutritionnel), phase 3 (validation de sortie) ; 62 tests.
+- À faire : orchestrateur LLM, évaluations, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
 
 ## Structure
 
@@ -33,6 +32,10 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   d'entrée, la définition d'outil du LLM et la validation de sortie.
 - `src/lib/domain/` — calcul nutritionnel : fonctions pures, sans appel
   réseau ni dépendance au LLM, entièrement testées.
+- `src/lib/validation/` — les quatre contrôles du menu produit par le LLM
+  (schéma, Atwater, cibles, diversité) et leurs seuils, réutilisés par le
+  prompt. Renvoie des erreurs lisibles, injectées telles quelles dans la
+  relance.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
 
 ## Conventions de code

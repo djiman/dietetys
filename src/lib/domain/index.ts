@@ -4,3 +4,4 @@ export * from "./objectif";
 export * from "./macros";
 export * from "./cibles";
 export * from "./securite";
+export * from "./menu";
