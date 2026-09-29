@@ -22,8 +22,9 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 ## État actuel
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
-  nutritionnel), phase 3 (validation de sortie) ; 62 tests.
-- À faire : orchestrateur LLM, évaluations, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
+  nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
+  LLM) ; 76 tests.
+- À faire : évaluations, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
 
 ## Structure
 
@@ -36,7 +37,12 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   (schéma, Atwater, cibles, diversité) et leurs seuils, réutilisés par le
   prompt. Renvoie des erreurs lisibles, injectées telles quelles dans la
   relance.
+- `src/lib/llm/` — prompt et orchestrateur : `genererMenu(cibles)` appelle
+  Claude (sortie structurée), valide, relance une fois avec les erreurs et
+  journalise chaque appel en JSON. Aucun calcul nutritionnel ici.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
+- `scripts/generer-menu.ts` — génère un menu réel pour trois profils
+  (appels facturés, 2 à 5 minutes par profil).
 
 ## Conventions de code
 
@@ -65,6 +71,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 | `npm run lint` | ESLint |
 | `npx tsc --noEmit` | Vérification des types |
 | `npm run check:api` | Vérifie la clé API Anthropic |
+| `npm run generer:menu` | Génère trois menus réels (appels facturés) |
 
 ## Avant de considérer une tâche terminée
 
