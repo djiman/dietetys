@@ -63,7 +63,7 @@ const { type: typeFormat, schema: schemaMenu } = zodOutputFormat(menuSchema);
 
 // Streaming recommandé pour une sortie de cette taille : il évite les délais
 // d'expiration HTTP. finalMessage() rend la réponse complète.
-const appelerClaude: AppelerModele = (messages) =>
+export const appelerClaude: AppelerModele = (messages) =>
   obtenirClient()
     .messages.stream({
       model: MODELE,

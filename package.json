@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "check:api": "tsx scripts/check-api.ts",
     "generer:menu": "tsx scripts/generer-menu.ts",
-    "menu": "tsx scripts/menu.ts"
+    "menu": "tsx scripts/menu.ts",
+    "evaluer": "tsx scripts/evaluation/evaluer.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",

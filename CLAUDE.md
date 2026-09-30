@@ -23,9 +23,9 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM), jeu de 6 profils d'évaluation (`scripts/evaluation/profils.ts`) ;
-  83 tests.
-- À faire : évaluations, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
+  LLM), jeu de 6 profils et script d'évaluation (`scripts/evaluation/`) ;
+  89 tests.
+- À faire : campagnes d'évaluation, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
 
 ## Structure
 
@@ -44,6 +44,9 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
 - `scripts/generer-menu.ts` — génère un menu réel pour trois profils
   (appels facturés, 2 à 5 minutes par profil).
+- `scripts/evaluation/` — évaluations : jeu fixe de 6 profils, mesures
+  (validité, écart calorique, coût, latence) et script de campagne, dont
+  les résultats sont écrits dans `resultats/`.
 
 ## Conventions de code
 
@@ -74,6 +77,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 | `npm run check:api` | Vérifie la clé API Anthropic |
 | `npm run generer:menu` | Génère trois menus réels (appels facturés) |
 | `npm run menu -- femme 30 165 60 modere perte` | Génère et affiche le menu d'un profil (appel facturé) |
+| `npm run evaluer -- 1-prompt-actuel` | Campagne d'évaluation sur les 6 profils (environ 2 $ et 20 minutes) |
 
 ## Avant de considérer une tâche terminée
 
