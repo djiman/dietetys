@@ -20,8 +20,9 @@ const MAX_TOKENS = 64000;
 
 /**
  * L'effort par défaut (high) portait une génération à 160 s ; medium la
- * réduit d'environ 30 % sans perte de validité sur trois profils. La
- * latence reste de 2 à 5 minutes selon la cible : à arbitrer en phase 5.
+ * réduit d'environ 30 % sans perte de validité sur trois profils. Conservé
+ * après les évaluations (phase 5) : de 1 à 6 minutes par génération selon
+ * la cible, relance comprise, avec une validité finale de 100 %.
  */
 const EFFORT = "medium";
 

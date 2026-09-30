@@ -6,6 +6,7 @@
  */
 import { config } from "dotenv";
 import Anthropic from "@anthropic-ai/sdk";
+import { MODELE } from "../src/lib/llm";
 
 // Next.js charge .env.local automatiquement ; un script autonome doit le
 // faire explicitement (dotenv ne lit que .env par défaut).
@@ -23,7 +24,7 @@ async function main() {
   const client = new Anthropic({ apiKey });
 
   const response = await client.messages.create({
-    model: "claude-sonnet-5",
+    model: MODELE,
     max_tokens: 32,
     messages: [{ role: "user", content: "Réponds uniquement par: Hi Djiman! " }],
   });

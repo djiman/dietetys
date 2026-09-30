@@ -1,5 +1,4 @@
-import type { Objectif } from "@/lib/contracts";
-import type { Cibles } from "@/lib/contracts";
+import type { Cibles, Objectif } from "@/lib/contracts";
 import {
   KCAL_PAR_G_GLUCIDES,
   KCAL_PAR_G_LIPIDES,
@@ -34,12 +33,8 @@ export function calculerMacros(
   const glucides_g = Math.max(0, kcalRestantes / KCAL_PAR_G_GLUCIDES);
 
   return {
-    proteines_g: arrondirGrammes(proteines_g),
-    glucides_g: arrondirGrammes(glucides_g),
-    lipides_g: arrondirGrammes(lipides_g),
+    proteines_g: Math.round(proteines_g),
+    glucides_g: Math.round(glucides_g),
+    lipides_g: Math.round(lipides_g),
   };
-}
-
-function arrondirGrammes(valeur: number): number {
-  return Math.round(valeur);
 }

@@ -43,8 +43,8 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   Claude (sortie structurée), valide, relance une fois avec les erreurs et
   journalise chaque appel en JSON. Aucun calcul nutritionnel ici.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
-- `scripts/generer-menu.ts` — génère un menu réel pour trois profils
-  (appels facturés, 2 à 5 minutes par profil).
+- `scripts/menu.ts` — génère et affiche le menu d'un profil passé en
+  arguments (appel facturé, 1 à 6 minutes).
 - `scripts/evaluation/` — évaluations : jeu fixe de 6 profils, mesures
   (validité, écart calorique, coût, latence) et script de campagne, dont
   les résultats sont écrits dans `resultats/`.
@@ -76,7 +76,6 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 | `npm run lint` | ESLint |
 | `npx tsc --noEmit` | Vérification des types |
 | `npm run check:api` | Vérifie la clé API Anthropic |
-| `npm run generer:menu` | Génère trois menus réels (appels facturés) |
 | `npm run menu -- femme 30 165 60 modere perte` | Génère et affiche le menu d'un profil (appel facturé) |
 | `npm run evaluer -- 1-prompt-actuel` | Campagne d'évaluation sur les 6 profils (environ 2 $ et 20 minutes) |
 
