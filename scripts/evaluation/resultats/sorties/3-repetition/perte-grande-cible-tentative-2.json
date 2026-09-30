@@ -5,7 +5,9 @@
     "glucides_g": 358,
     "lipides_g": 102
   },
-  "controles_echoues": [],
+  "controles_echoues": [
+    "cibles"
+  ],
   "sortie": {
     "jours": [
       {

@@ -10,7 +10,7 @@ describe("PROMPT_SYSTEME", () => {
   it("annonce les seuils de la validation", () => {
     expect(PROMPT_SYSTEME).toContain("à 15 % près (ou 10 kcal");
     expect(PROMPT_SYSTEME).toContain("±10 % de la cible");
-    expect(PROMPT_SYSTEME).toContain("au moins 90 % de la cible");
+    expect(PROMPT_SYSTEME).toContain("entre 90 % et 125 % de la cible");
     expect(PROMPT_SYSTEME).toContain("au plus 2 fois");
   });
 });

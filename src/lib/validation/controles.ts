@@ -2,6 +2,7 @@ import { menuSchema, type Cibles, type Menu, type TypeRepas } from "@/lib/contra
 import { calculerKcalAtwater, calculerTotauxJour } from "@/lib/domain";
 import {
   OCCURRENCES_MAX_PLAT,
+  PROTEINES_MAX_RATIO,
   PROTEINES_MIN_RATIO,
   TOLERANCE_ATWATER_MIN_KCAL,
   TOLERANCE_ATWATER_RATIO,
@@ -64,6 +65,7 @@ export function verifierCibles(menu: Menu, cibles: Cibles): string[] {
   const kcalMin = cibles.kcal * (1 - TOLERANCE_KCAL_JOUR_RATIO);
   const kcalMax = cibles.kcal * (1 + TOLERANCE_KCAL_JOUR_RATIO);
   const proteinesMin = cibles.proteines_g * PROTEINES_MIN_RATIO;
+  const proteinesMax = cibles.proteines_g * PROTEINES_MAX_RATIO;
 
   for (const jour of menu.jours) {
     const totaux = calculerTotauxJour(jour);
@@ -72,9 +74,9 @@ export function verifierCibles(menu: Menu, cibles: Cibles): string[] {
         `Jour ${jour.numero} : ${Math.round(totaux.kcal)} kcal au total, attendu entre ${Math.round(kcalMin)} et ${Math.round(kcalMax)}.`
       );
     }
-    if (totaux.proteines_g < proteinesMin) {
+    if (totaux.proteines_g < proteinesMin || totaux.proteines_g > proteinesMax) {
       erreurs.push(
-        `Jour ${jour.numero} : ${Math.round(totaux.proteines_g)} g de protéines au total, attendu au moins ${Math.round(proteinesMin)} g.`
+        `Jour ${jour.numero} : ${Math.round(totaux.proteines_g)} g de protéines au total, attendu entre ${Math.round(proteinesMin)} et ${Math.round(proteinesMax)} g.`
       );
     }
   }

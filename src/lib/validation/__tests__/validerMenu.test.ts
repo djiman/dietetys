@@ -121,7 +121,22 @@ describe("validerMenu", () => {
       const { erreurs, controlesEchoues } = erreursDe(menu);
       expect(controlesEchoues).toEqual(["cibles"]);
       expect(erreurs).toEqual([
-        "Jour 7 : 85 g de protéines au total, attendu au moins 90 g.",
+        "Jour 7 : 85 g de protéines au total, attendu entre 90 et 125 g.",
+      ]);
+    });
+
+    it("rejette un jour à 130 % de la cible de protéines", () => {
+      const menu = construireMenuFictif();
+      // 25 g de protéines en plus, pris sur les glucides : kcal inchangées.
+      menu.jours[3].repas[1].aliments[0] = {
+        ...alimentFictif("Plat très protéiné"),
+        proteines_g: 60,
+        glucides_g: 50,
+      };
+      const { erreurs, controlesEchoues } = erreursDe(menu);
+      expect(controlesEchoues).toEqual(["cibles"]);
+      expect(erreurs).toEqual([
+        "Jour 4 : 130 g de protéines au total, attendu entre 90 et 125 g.",
       ]);
     });
   });

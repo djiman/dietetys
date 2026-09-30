@@ -19,5 +19,14 @@ export const TOLERANCE_KCAL_JOUR_RATIO = 0.1;
 /** Part minimale de la cible de protéines à atteindre chaque jour. */
 export const PROTEINES_MIN_RATIO = 0.9;
 
+/**
+ * Part maximale de la cible de protéines. Sans plafond, le modèle en ajoute
+ * pour être sûr d'atteindre le minimum : un menu réel est monté à 1,9 fois
+ * la cible (2,3 g/kg, 26 % des kcal), au-delà des références ANSES (10 à
+ * 20 % des kcal) et, les kcal étant tenues, au détriment des glucides et
+ * des lipides.
+ */
+export const PROTEINES_MAX_RATIO = 1.25;
+
 /** Nombre maximal d'occurrences d'un même plat sur la semaine (déjeuners et dîners). */
 export const OCCURRENCES_MAX_PLAT = 2;

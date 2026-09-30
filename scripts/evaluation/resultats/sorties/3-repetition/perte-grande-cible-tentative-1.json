@@ -6,7 +6,8 @@
     "lipides_g": 102
   },
   "controles_echoues": [
-    "atwater"
+    "atwater",
+    "cibles"
   ],
   "sortie": {
     "jours": [
