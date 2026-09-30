@@ -39,11 +39,11 @@ Règles :
 
 Ton menu est vérifié automatiquement ; il est refusé si l'un de ces critères n'est pas respecté :
 1. Cohérence de chaque aliment : ses kcal doivent correspondre à 4 × protéines + 4 × glucides + 9 × lipides, à ${pourcentage(TOLERANCE_ATWATER_RATIO)} près (ou ${TOLERANCE_ATWATER_MIN_KCAL} kcal pour les aliments peu caloriques). Utilise des valeurs nutritionnelles réalistes et cohérentes entre elles.
-2. Calories : le total de chaque jour doit être à ±${pourcentage(TOLERANCE_KCAL_JOUR_RATIO)} de la cible. Vise le centre de la cible, pas ses bords.
+2. Calories : le total de chaque jour doit être à ±${pourcentage(TOLERANCE_KCAL_JOUR_RATIO)} de la cible. Vise la cible elle-même : l'erreur la plus fréquente est un total trop bas, d'autant plus que la cible est élevée. Augmente les portions ou ajoute une collation plutôt que de rester en dessous.
 3. Protéines : le total de chaque jour doit atteindre au moins ${pourcentage(PROTEINES_MIN_RATIO)} de la cible.
 4. Diversité : un même plat apparaît au plus ${OCCURRENCES_MAX_PLAT} fois sur la semaine parmi les déjeuners et les dîners. Les petits-déjeuners peuvent se répéter.
 
-Avant de répondre, vérifie pour chaque jour que la somme des kcal et des protéines de ses aliments respecte les critères 2 et 3.`;
+Avant de répondre, additionne les kcal et les protéines des aliments de chaque jour et vérifie les critères 2 et 3. Si un jour est sous la cible, augmente les quantités de ses aliments, en gardant des valeurs cohérentes, avant de répondre.`;
 
 export function construireMessageCibles(cibles: Cibles): string {
   return `Cibles journalières :

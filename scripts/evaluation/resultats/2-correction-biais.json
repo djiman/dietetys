@@ -1,0 +1,82 @@
+{
+  "campagne": "2-correction-biais",
+  "modele": "claude-sonnet-5",
+  "date": "2026-09-30T08:43:22.112Z",
+  "resultats": [
+    {
+      "nom": "Perte, petite cible",
+      "cible_kcal": 1250,
+      "tentatives": 1,
+      "valide_premier_essai": true,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.03842285714285714,
+      "cout_usd": 0.1307,
+      "latence_s": 101.919
+    },
+    {
+      "nom": "Perte, grande cible",
+      "cible_kcal": 3050,
+      "tentatives": 2,
+      "valide_premier_essai": false,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.060018735362997684,
+      "cout_usd": 0.37130320000000006,
+      "latence_s": 230.411
+    },
+    {
+      "nom": "Maintien, petite cible",
+      "cible_kcal": 1250,
+      "tentatives": 1,
+      "valide_premier_essai": true,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.06044571428571429,
+      "cout_usd": 0.1480516,
+      "latence_s": 122.023
+    },
+    {
+      "nom": "Maintien, grande cible",
+      "cible_kcal": 3100,
+      "tentatives": 1,
+      "valide_premier_essai": true,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.034354838709677496,
+      "cout_usd": 0.2128216,
+      "latence_s": 163.575
+    },
+    {
+      "nom": "Prise, petite cible",
+      "cible_kcal": 2000,
+      "tentatives": 1,
+      "valide_premier_essai": true,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.03594285714285712,
+      "cout_usd": 0.18955160000000001,
+      "latence_s": 139.723
+    },
+    {
+      "nom": "Prise, grande cible",
+      "cible_kcal": 3950,
+      "tentatives": 1,
+      "valide_premier_essai": true,
+      "valide": true,
+      "raison_echec": null,
+      "ecart_calorique_moyen": -0.0868173598553345,
+      "cout_usd": 0.3191616,
+      "latence_s": 247.346
+    }
+  ],
+  "resume": {
+    "profils": 6,
+    "taux_valide_premier_essai": 0.8333333333333334,
+    "taux_valide": 1,
+    "ecart_calorique_moyen": -0.05266706041657304,
+    "cout_moyen_usd": 0.2285982666666667,
+    "cout_total_usd": 1.3715896,
+    "latence_moyenne_s": 167.49949999999998
+  }
+}
