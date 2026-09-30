@@ -1,6 +1,7 @@
 {
   "campagne": "2-correction-biais",
   "modele": "claude-sonnet-5",
+  "version_prompt": "a671be194fbb",
   "date": "2026-09-30T08:43:22.112Z",
   "resultats": [
     {

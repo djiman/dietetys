@@ -7,14 +7,22 @@
  * Exemple : npm run evaluer -- 1-prompt-actuel
  * Appels facturés : environ 2 $ et 20 minutes par campagne. Les résultats
  * sont écrits dans scripts/evaluation/resultats/<nom-campagne>.json, pour
- * comparer les campagnes entre elles.
+ * comparer les campagnes entre elles, et chaque réponse brute du modèle dans
+ * resultats/sorties/<nom-campagne>/, rejouée par les tests de la validation.
  */
 import type Anthropic from "@anthropic-ai/sdk";
 import { config } from "dotenv";
 import { mkdirSync, writeFileSync } from "node:fs";
-import type { Entree } from "../../src/lib/contracts";
+import type { Cibles, Entree } from "../../src/lib/contracts";
 import { calculerCibles } from "../../src/lib/domain";
-import { MODELE, appelerClaude, genererMenu, type AppelerModele } from "../../src/lib/llm";
+import {
+  MODELE,
+  VERSION_PROMPT,
+  appelerClaude,
+  genererMenu,
+  type AppelerModele,
+} from "../../src/lib/llm";
+import { validerMenu } from "../../src/lib/validation";
 import {
   calculerCoutAppel,
   calculerEcartCaloriqueMoyen,
@@ -28,7 +36,51 @@ config({ path: ".env.local" });
 
 const DOSSIER_RESULTATS = "scripts/evaluation/resultats";
 
-async function evaluerProfil(nom: string, entree: Entree): Promise<ResultatProfil> {
+function identifiant(nom: string): string {
+  return nom
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/**
+ * Enregistre chaque réponse avec le verdict de la validation au moment de
+ * la campagne : les tests rejouent ces vraies sorties, gratuitement, pour
+ * vérifier qu'une modification de la validation ne change pas ses verdicts
+ * sans qu'on le voie.
+ */
+function enregistrerSorties(dossier: string, nom: string, cibles: Cibles, reponses: Anthropic.Message[]) {
+  reponses.forEach((reponse, index) => {
+    const texte = reponse.content.find((bloc) => bloc.type === "text")?.text ?? "";
+    let sortie: unknown;
+    try {
+      sortie = JSON.parse(texte);
+    } catch {
+      return;
+    }
+    const validation = validerMenu(sortie, cibles);
+    writeFileSync(
+      `${dossier}/${identifiant(nom)}-tentative-${index + 1}.json`,
+      JSON.stringify(
+        {
+          cibles,
+          controles_echoues: validation.valide ? [] : validation.controlesEchoues,
+          sortie,
+        },
+        null,
+        2
+      )
+    );
+  });
+}
+
+async function evaluerProfil(
+  nom: string,
+  entree: Entree,
+  dossierSorties: string
+): Promise<ResultatProfil> {
   const cibles = calculerCibles(entree);
   // genererMenu ne renvoie que le menu : l'appel réel est enveloppé pour
   // compter les tentatives et les tokens consommés, relance comprise.
@@ -41,6 +93,7 @@ async function evaluerProfil(nom: string, entree: Entree): Promise<ResultatProfi
 
   const debut = Date.now();
   const resultat = await genererMenu(cibles, appelerEtMesurer);
+  enregistrerSorties(dossierSorties, nom, cibles, reponses);
   return {
     nom,
     cible_kcal: cibles.kcal,
@@ -64,18 +117,30 @@ async function main() {
     console.error("Usage : npm run evaluer -- <nom-campagne>");
     process.exit(1);
   }
-  mkdirSync(DOSSIER_RESULTATS, { recursive: true });
+  const dossierSorties = `${DOSSIER_RESULTATS}/sorties/${campagne}`;
+  mkdirSync(dossierSorties, { recursive: true });
   const fichier = `${DOSSIER_RESULTATS}/${campagne}.json`;
 
   const resultats: ResultatProfil[] = [];
   for (const [index, { nom, entree }] of PROFILS_EVALUATION.entries()) {
     console.error(`[${index + 1}/${PROFILS_EVALUATION.length}] ${nom}`);
-    resultats.push(await evaluerProfil(nom, entree));
+    resultats.push(await evaluerProfil(nom, entree, dossierSorties));
     // Écrit après chaque profil : un plantage en cours de campagne ne perd
     // pas les résultats déjà payés.
     writeFileSync(
       fichier,
-      JSON.stringify({ campagne, modele: MODELE, date: new Date().toISOString(), resultats, resume: resumerCampagne(resultats) }, null, 2)
+      JSON.stringify(
+        {
+          campagne,
+          modele: MODELE,
+          version_prompt: VERSION_PROMPT,
+          date: new Date().toISOString(),
+          resultats,
+          resume: resumerCampagne(resultats),
+        },
+        null,
+        2
+      )
     );
   }
 

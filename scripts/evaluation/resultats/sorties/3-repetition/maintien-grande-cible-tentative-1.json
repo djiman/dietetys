@@ -1,0 +1,1152 @@
+{
+  "cibles": {
+    "kcal": 3100,
+    "proteines_g": 96,
+    "glucides_g": 447,
+    "lipides_g": 103
+  },
+  "controles_echoues": [],
+  "sortie": {
+    "jours": [
+      {
+        "numero": 1,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Porridge banane",
+            "aliments": [
+              {
+                "nom": "Flocons d'avoine",
+                "quantite_g": 80,
+                "kcal": 300,
+                "proteines_g": 10.4,
+                "glucides_g": 54.4,
+                "lipides_g": 5.6
+              },
+              {
+                "nom": "Lait entier",
+                "quantite_g": 250,
+                "kcal": 160,
+                "proteines_g": 8,
+                "glucides_g": 12,
+                "lipides_g": 9
+              },
+              {
+                "nom": "Banane",
+                "quantite_g": 120,
+                "kcal": 106.8,
+                "proteines_g": 1.32,
+                "glucides_g": 27.6,
+                "lipides_g": 0.36
+              },
+              {
+                "nom": "Miel",
+                "quantite_g": 15,
+                "kcal": 45.6,
+                "proteines_g": 0.05,
+                "glucides_g": 12.3,
+                "lipides_g": 0
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Poulet riz carottes",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet cuit",
+                "quantite_g": 200,
+                "kcal": 330,
+                "proteines_g": 62,
+                "glucides_g": 0,
+                "lipides_g": 7.2
+              },
+              {
+                "nom": "Riz cuit",
+                "quantite_g": 300,
+                "kcal": 390,
+                "proteines_g": 8.1,
+                "glucides_g": 84,
+                "lipides_g": 0.9
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 15,
+                "kcal": 132.6,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 15
+              },
+              {
+                "nom": "Carotte",
+                "quantite_g": 100,
+                "kcal": 41,
+                "proteines_g": 0.9,
+                "glucides_g": 10,
+                "lipides_g": 0.2
+              },
+              {
+                "nom": "Oignon",
+                "quantite_g": 50,
+                "kcal": 20,
+                "proteines_g": 0.55,
+                "glucides_g": 4.5,
+                "lipides_g": 0.05
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Pâtes à la bolognaise",
+            "aliments": [
+              {
+                "nom": "Pâtes cuites",
+                "quantite_g": 300,
+                "kcal": 393,
+                "proteines_g": 15,
+                "glucides_g": 75,
+                "lipides_g": 3.3
+              },
+              {
+                "nom": "Bœuf haché 15%",
+                "quantite_g": 150,
+                "kcal": 381,
+                "proteines_g": 39,
+                "glucides_g": 0,
+                "lipides_g": 25.5
+              },
+              {
+                "nom": "Tomate",
+                "quantite_g": 150,
+                "kcal": 27,
+                "proteines_g": 1.35,
+                "glucides_g": 5.85,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Emmental",
+                "quantite_g": 30,
+                "kcal": 114,
+                "proteines_g": 8.4,
+                "glucides_g": 0,
+                "lipides_g": 8.7
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 10,
+                "kcal": 88.4,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 10
+              },
+              {
+                "nom": "Baguette",
+                "quantite_g": 100,
+                "kcal": 274,
+                "proteines_g": 9,
+                "glucides_g": 55,
+                "lipides_g": 1.4
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Yaourt et amandes",
+            "aliments": [
+              {
+                "nom": "Yaourt nature entier",
+                "quantite_g": 200,
+                "kcal": 122,
+                "proteines_g": 7,
+                "glucides_g": 9.4,
+                "lipides_g": 6.6
+              },
+              {
+                "nom": "Amandes",
+                "quantite_g": 30,
+                "kcal": 173.7,
+                "proteines_g": 6.3,
+                "glucides_g": 6.6,
+                "lipides_g": 15
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Tartines beurre confiture",
+            "aliments": [
+              {
+                "nom": "Baguette",
+                "quantite_g": 100,
+                "kcal": 274,
+                "proteines_g": 9,
+                "glucides_g": 55,
+                "lipides_g": 1.4
+              },
+              {
+                "nom": "Beurre",
+                "quantite_g": 20,
+                "kcal": 143.4,
+                "proteines_g": 0.18,
+                "glucides_g": 0.02,
+                "lipides_g": 16.2
+              },
+              {
+                "nom": "Confiture",
+                "quantite_g": 30,
+                "kcal": 75,
+                "proteines_g": 0.09,
+                "glucides_g": 18.9,
+                "lipides_g": 0.03
+              },
+              {
+                "nom": "Jus d'orange",
+                "quantite_g": 200,
+                "kcal": 90,
+                "proteines_g": 1.4,
+                "glucides_g": 20,
+                "lipides_g": 0.4
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Saumon quinoa légumes",
+            "aliments": [
+              {
+                "nom": "Saumon cuit",
+                "quantite_g": 200,
+                "kcal": 416,
+                "proteines_g": 40,
+                "glucides_g": 0,
+                "lipides_g": 26
+              },
+              {
+                "nom": "Quinoa cuit",
+                "quantite_g": 300,
+                "kcal": 360,
+                "proteines_g": 13.2,
+                "glucides_g": 63,
+                "lipides_g": 5.7
+              },
+              {
+                "nom": "Courgette",
+                "quantite_g": 150,
+                "kcal": 25.5,
+                "proteines_g": 1.8,
+                "glucides_g": 4.65,
+                "lipides_g": 0.45
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 15,
+                "kcal": 132.6,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 15
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Steak frites",
+            "aliments": [
+              {
+                "nom": "Steak de bœuf",
+                "quantite_g": 200,
+                "kcal": 542,
+                "proteines_g": 52,
+                "glucides_g": 0,
+                "lipides_g": 36
+              },
+              {
+                "nom": "Pomme de terre",
+                "quantite_g": 400,
+                "kcal": 348,
+                "proteines_g": 8,
+                "glucides_g": 80,
+                "lipides_g": 0.4
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 20,
+                "kcal": 176.8,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 20
+              },
+              {
+                "nom": "Haricots verts",
+                "quantite_g": 100,
+                "kcal": 31,
+                "proteines_g": 1.8,
+                "glucides_g": 7,
+                "lipides_g": 0.1
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Pomme et beurre de cacahuète",
+            "aliments": [
+              {
+                "nom": "Pomme",
+                "quantite_g": 150,
+                "kcal": 86,
+                "proteines_g": 0.45,
+                "glucides_g": 21,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Beurre de cacahuète",
+                "quantite_g": 20,
+                "kcal": 117.6,
+                "proteines_g": 5,
+                "glucides_g": 4,
+                "lipides_g": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Œufs et pain à l'avocat",
+            "aliments": [
+              {
+                "nom": "Œufs",
+                "quantite_g": 120,
+                "kcal": 186,
+                "proteines_g": 15.6,
+                "glucides_g": 1.32,
+                "lipides_g": 13.2
+              },
+              {
+                "nom": "Pain de mie blanc",
+                "quantite_g": 80,
+                "kcal": 212,
+                "proteines_g": 7.2,
+                "glucides_g": 39.2,
+                "lipides_g": 2.56
+              },
+              {
+                "nom": "Beurre",
+                "quantite_g": 10,
+                "kcal": 71.7,
+                "proteines_g": 0.09,
+                "glucides_g": 0.01,
+                "lipides_g": 8.1
+              },
+              {
+                "nom": "Avocat",
+                "quantite_g": 60,
+                "kcal": 96,
+                "proteines_g": 1.2,
+                "glucides_g": 5.4,
+                "lipides_g": 9
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Couscous poulet",
+            "aliments": [
+              {
+                "nom": "Couscous cuit",
+                "quantite_g": 400,
+                "kcal": 448,
+                "proteines_g": 15.2,
+                "glucides_g": 92,
+                "lipides_g": 0.8
+              },
+              {
+                "nom": "Blanc de poulet cuit",
+                "quantite_g": 150,
+                "kcal": 247.5,
+                "proteines_g": 46.5,
+                "glucides_g": 0,
+                "lipides_g": 5.4
+              },
+              {
+                "nom": "Poivron",
+                "quantite_g": 100,
+                "kcal": 31,
+                "proteines_g": 1,
+                "glucides_g": 6,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 15,
+                "kcal": 132.6,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 15
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Lasagnes maison",
+            "aliments": [
+              {
+                "nom": "Pâtes cuites",
+                "quantite_g": 250,
+                "kcal": 327.5,
+                "proteines_g": 12.5,
+                "glucides_g": 62.5,
+                "lipides_g": 2.75
+              },
+              {
+                "nom": "Bœuf haché 15%",
+                "quantite_g": 200,
+                "kcal": 508,
+                "proteines_g": 52,
+                "glucides_g": 0,
+                "lipides_g": 34
+              },
+              {
+                "nom": "Tomate",
+                "quantite_g": 200,
+                "kcal": 36,
+                "proteines_g": 1.8,
+                "glucides_g": 7.8,
+                "lipides_g": 0.4
+              },
+              {
+                "nom": "Mozzarella",
+                "quantite_g": 80,
+                "kcal": 224,
+                "proteines_g": 22.4,
+                "glucides_g": 2.48,
+                "lipides_g": 13.6
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 10,
+                "kcal": 88.4,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 10
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Fromage blanc miel",
+            "aliments": [
+              {
+                "nom": "Fromage blanc",
+                "quantite_g": 150,
+                "kcal": 147,
+                "proteines_g": 16.5,
+                "glucides_g": 5.1,
+                "lipides_g": 6.45
+              },
+              {
+                "nom": "Miel",
+                "quantite_g": 20,
+                "kcal": 60.8,
+                "proteines_g": 0.06,
+                "glucides_g": 16.4,
+                "lipides_g": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Porridge avoine pomme",
+            "aliments": [
+              {
+                "nom": "Flocons d'avoine",
+                "quantite_g": 70,
+                "kcal": 262.5,
+                "proteines_g": 9.1,
+                "glucides_g": 47.6,
+                "lipides_g": 4.9
+              },
+              {
+                "nom": "Lait entier",
+                "quantite_g": 200,
+                "kcal": 128,
+                "proteines_g": 6.4,
+                "glucides_g": 9.6,
+                "lipides_g": 7.2
+              },
+              {
+                "nom": "Pomme",
+                "quantite_g": 100,
+                "kcal": 57,
+                "proteines_g": 0.3,
+                "glucides_g": 14,
+                "lipides_g": 0.2
+              },
+              {
+                "nom": "Amandes",
+                "quantite_g": 15,
+                "kcal": 86.85,
+                "proteines_g": 3.15,
+                "glucides_g": 3.3,
+                "lipides_g": 7.5
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Riz cantonais crevettes",
+            "aliments": [
+              {
+                "nom": "Riz cuit",
+                "quantite_g": 400,
+                "kcal": 520,
+                "proteines_g": 10.8,
+                "glucides_g": 112,
+                "lipides_g": 1.2
+              },
+              {
+                "nom": "Crevettes cuites",
+                "quantite_g": 200,
+                "kcal": 198,
+                "proteines_g": 48,
+                "glucides_g": 0,
+                "lipides_g": 0.6
+              },
+              {
+                "nom": "Œuf",
+                "quantite_g": 50,
+                "kcal": 77.5,
+                "proteines_g": 6.5,
+                "glucides_g": 0.55,
+                "lipides_g": 5.5
+              },
+              {
+                "nom": "Carotte",
+                "quantite_g": 80,
+                "kcal": 32.8,
+                "proteines_g": 0.72,
+                "glucides_g": 8,
+                "lipides_g": 0.16
+              },
+              {
+                "nom": "Oignon",
+                "quantite_g": 40,
+                "kcal": 16,
+                "proteines_g": 0.44,
+                "glucides_g": 3.6,
+                "lipides_g": 0.04
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 20,
+                "kcal": 176.8,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 20
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Chili con carne",
+            "aliments": [
+              {
+                "nom": "Bœuf haché 15%",
+                "quantite_g": 250,
+                "kcal": 635,
+                "proteines_g": 65,
+                "glucides_g": 0,
+                "lipides_g": 42.5
+              },
+              {
+                "nom": "Haricots rouges cuits",
+                "quantite_g": 300,
+                "kcal": 348,
+                "proteines_g": 27,
+                "glucides_g": 60,
+                "lipides_g": 1.2
+              },
+              {
+                "nom": "Tomate",
+                "quantite_g": 200,
+                "kcal": 36,
+                "proteines_g": 1.8,
+                "glucides_g": 7.8,
+                "lipides_g": 0.4
+              },
+              {
+                "nom": "Oignon",
+                "quantite_g": 50,
+                "kcal": 20,
+                "proteines_g": 0.55,
+                "glucides_g": 4.5,
+                "lipides_g": 0.05
+              },
+              {
+                "nom": "Poivron",
+                "quantite_g": 100,
+                "kcal": 31,
+                "proteines_g": 1,
+                "glucides_g": 6,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 10,
+                "kcal": 88.4,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 10
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Yaourt miel amandes",
+            "aliments": [
+              {
+                "nom": "Yaourt nature entier",
+                "quantite_g": 200,
+                "kcal": 122,
+                "proteines_g": 7,
+                "glucides_g": 9.4,
+                "lipides_g": 6.6
+              },
+              {
+                "nom": "Miel",
+                "quantite_g": 20,
+                "kcal": 60.8,
+                "proteines_g": 0.06,
+                "glucides_g": 16.4,
+                "lipides_g": 0
+              },
+              {
+                "nom": "Amandes",
+                "quantite_g": 20,
+                "kcal": 115.8,
+                "proteines_g": 4.2,
+                "glucides_g": 4.4,
+                "lipides_g": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Pain complet fromage jambon",
+            "aliments": [
+              {
+                "nom": "Pain complet",
+                "quantite_g": 90,
+                "kcal": 238.5,
+                "proteines_g": 8.1,
+                "glucides_g": 44.1,
+                "lipides_g": 2.88
+              },
+              {
+                "nom": "Jambon blanc",
+                "quantite_g": 60,
+                "kcal": 87,
+                "proteines_g": 12.6,
+                "glucides_g": 0.6,
+                "lipides_g": 3.6
+              },
+              {
+                "nom": "Emmental",
+                "quantite_g": 30,
+                "kcal": 114,
+                "proteines_g": 8.4,
+                "glucides_g": 0,
+                "lipides_g": 8.7
+              },
+              {
+                "nom": "Jus d'orange",
+                "quantite_g": 150,
+                "kcal": 67.5,
+                "proteines_g": 1.05,
+                "glucides_g": 15,
+                "lipides_g": 0.3
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Salade de thon pâtes",
+            "aliments": [
+              {
+                "nom": "Thon au naturel à l'huile égoutté",
+                "quantite_g": 180,
+                "kcal": 360,
+                "proteines_g": 45,
+                "glucides_g": 0,
+                "lipides_g": 18
+              },
+              {
+                "nom": "Pâtes cuites",
+                "quantite_g": 350,
+                "kcal": 458.5,
+                "proteines_g": 17.5,
+                "glucides_g": 87.5,
+                "lipides_g": 3.85
+              },
+              {
+                "nom": "Tomate",
+                "quantite_g": 150,
+                "kcal": 27,
+                "proteines_g": 1.35,
+                "glucides_g": 5.85,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 10,
+                "kcal": 88.4,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 10
+              },
+              {
+                "nom": "Œuf",
+                "quantite_g": 50,
+                "kcal": 77.5,
+                "proteines_g": 6.5,
+                "glucides_g": 0.55,
+                "lipides_g": 5.5
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Poulet rôti pommes de terre",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet cuit",
+                "quantite_g": 280,
+                "kcal": 462,
+                "proteines_g": 86.8,
+                "glucides_g": 0,
+                "lipides_g": 10.08
+              },
+              {
+                "nom": "Pomme de terre",
+                "quantite_g": 450,
+                "kcal": 391.5,
+                "proteines_g": 9,
+                "glucides_g": 90,
+                "lipides_g": 0.45
+              },
+              {
+                "nom": "Haricots verts",
+                "quantite_g": 150,
+                "kcal": 46.5,
+                "proteines_g": 2.7,
+                "glucides_g": 10.5,
+                "lipides_g": 0.15
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 15,
+                "kcal": 132.6,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 15
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Amandes pomme miel",
+            "aliments": [
+              {
+                "nom": "Amandes",
+                "quantite_g": 30,
+                "kcal": 173.7,
+                "proteines_g": 6.3,
+                "glucides_g": 6.6,
+                "lipides_g": 15
+              },
+              {
+                "nom": "Pomme",
+                "quantite_g": 100,
+                "kcal": 57,
+                "proteines_g": 0.3,
+                "glucides_g": 14,
+                "lipides_g": 0.2
+              },
+              {
+                "nom": "Miel",
+                "quantite_g": 15,
+                "kcal": 45.6,
+                "proteines_g": 0.05,
+                "glucides_g": 12.3,
+                "lipides_g": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Smoothie bowl banane",
+            "aliments": [
+              {
+                "nom": "Yaourt nature entier",
+                "quantite_g": 200,
+                "kcal": 122,
+                "proteines_g": 7,
+                "glucides_g": 9.4,
+                "lipides_g": 6.6
+              },
+              {
+                "nom": "Banane",
+                "quantite_g": 100,
+                "kcal": 89,
+                "proteines_g": 1.1,
+                "glucides_g": 23,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Flocons d'avoine",
+                "quantite_g": 60,
+                "kcal": 225,
+                "proteines_g": 7.8,
+                "glucides_g": 40.8,
+                "lipides_g": 4.2
+              },
+              {
+                "nom": "Miel",
+                "quantite_g": 10,
+                "kcal": 30.4,
+                "proteines_g": 0.03,
+                "glucides_g": 8.2,
+                "lipides_g": 0
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Quiche lorraine maison",
+            "aliments": [
+              {
+                "nom": "Œufs",
+                "quantite_g": 150,
+                "kcal": 232.5,
+                "proteines_g": 19.5,
+                "glucides_g": 1.65,
+                "lipides_g": 16.5
+              },
+              {
+                "nom": "Emmental",
+                "quantite_g": 60,
+                "kcal": 228,
+                "proteines_g": 16.8,
+                "glucides_g": 0,
+                "lipides_g": 17.4
+              },
+              {
+                "nom": "Lait entier",
+                "quantite_g": 100,
+                "kcal": 64,
+                "proteines_g": 3.2,
+                "glucides_g": 4.8,
+                "lipides_g": 3.6
+              },
+              {
+                "nom": "Jambon blanc",
+                "quantite_g": 80,
+                "kcal": 116,
+                "proteines_g": 16.8,
+                "glucides_g": 0.8,
+                "lipides_g": 4.8
+              },
+              {
+                "nom": "Baguette",
+                "quantite_g": 100,
+                "kcal": 274,
+                "proteines_g": 9,
+                "glucides_g": 55,
+                "lipides_g": 1.4
+              },
+              {
+                "nom": "Salade verte",
+                "quantite_g": 100,
+                "kcal": 15,
+                "proteines_g": 1.4,
+                "glucides_g": 2.9,
+                "lipides_g": 0.2
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Curry de poulet au riz",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet cuit",
+                "quantite_g": 200,
+                "kcal": 330,
+                "proteines_g": 62,
+                "glucides_g": 0,
+                "lipides_g": 7.2
+              },
+              {
+                "nom": "Riz cuit",
+                "quantite_g": 400,
+                "kcal": 520,
+                "proteines_g": 10.8,
+                "glucides_g": 112,
+                "lipides_g": 1.2
+              },
+              {
+                "nom": "Lait de coco",
+                "quantite_g": 150,
+                "kcal": 295.5,
+                "proteines_g": 3,
+                "glucides_g": 4.5,
+                "lipides_g": 31.5
+              },
+              {
+                "nom": "Poivron",
+                "quantite_g": 100,
+                "kcal": 31,
+                "proteines_g": 1,
+                "glucides_g": 6,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Oignon",
+                "quantite_g": 50,
+                "kcal": 20,
+                "proteines_g": 0.55,
+                "glucides_g": 4.5,
+                "lipides_g": 0.05
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 10,
+                "kcal": 88.4,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 10
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Fromage blanc pomme",
+            "aliments": [
+              {
+                "nom": "Fromage blanc",
+                "quantite_g": 100,
+                "kcal": 98,
+                "proteines_g": 11,
+                "glucides_g": 3.4,
+                "lipides_g": 4.3
+              },
+              {
+                "nom": "Pomme",
+                "quantite_g": 100,
+                "kcal": 57,
+                "proteines_g": 0.3,
+                "glucides_g": 14,
+                "lipides_g": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Crêpes maison",
+            "aliments": [
+              {
+                "nom": "Œuf",
+                "quantite_g": 100,
+                "kcal": 155,
+                "proteines_g": 13,
+                "glucides_g": 1.1,
+                "lipides_g": 11
+              },
+              {
+                "nom": "Farine de blé",
+                "quantite_g": 100,
+                "kcal": 364,
+                "proteines_g": 10,
+                "glucides_g": 76,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Lait entier",
+                "quantite_g": 150,
+                "kcal": 96,
+                "proteines_g": 4.8,
+                "glucides_g": 7.2,
+                "lipides_g": 5.4
+              },
+              {
+                "nom": "Sucre",
+                "quantite_g": 20,
+                "kcal": 77.4,
+                "proteines_g": 0,
+                "glucides_g": 20,
+                "lipides_g": 0
+              },
+              {
+                "nom": "Beurre",
+                "quantite_g": 15,
+                "kcal": 107.55,
+                "proteines_g": 0.135,
+                "glucides_g": 0.015,
+                "lipides_g": 12.15
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Wrap poulet crudités",
+            "aliments": [
+              {
+                "nom": "Tortilla de blé",
+                "quantite_g": 80,
+                "kcal": 248,
+                "proteines_g": 7.2,
+                "glucides_g": 40,
+                "lipides_g": 5.6
+              },
+              {
+                "nom": "Blanc de poulet cuit",
+                "quantite_g": 200,
+                "kcal": 330,
+                "proteines_g": 62,
+                "glucides_g": 0,
+                "lipides_g": 7.2
+              },
+              {
+                "nom": "Avocat",
+                "quantite_g": 100,
+                "kcal": 160,
+                "proteines_g": 2,
+                "glucides_g": 9,
+                "lipides_g": 15
+              },
+              {
+                "nom": "Tomate",
+                "quantite_g": 80,
+                "kcal": 14.4,
+                "proteines_g": 0.72,
+                "glucides_g": 3.12,
+                "lipides_g": 0.16
+              },
+              {
+                "nom": "Salade verte",
+                "quantite_g": 50,
+                "kcal": 7.5,
+                "proteines_g": 0.5,
+                "glucides_g": 1.5,
+                "lipides_g": 0.1
+              },
+              {
+                "nom": "Mayonnaise allégée",
+                "quantite_g": 15,
+                "kcal": 45,
+                "proteines_g": 0.15,
+                "glucides_g": 1.5,
+                "lipides_g": 4.8
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Saumon quinoa asperges",
+            "aliments": [
+              {
+                "nom": "Saumon cuit",
+                "quantite_g": 200,
+                "kcal": 416,
+                "proteines_g": 40,
+                "glucides_g": 0,
+                "lipides_g": 26
+              },
+              {
+                "nom": "Quinoa cuit",
+                "quantite_g": 300,
+                "kcal": 360,
+                "proteines_g": 13.2,
+                "glucides_g": 63,
+                "lipides_g": 5.7
+              },
+              {
+                "nom": "Asperges",
+                "quantite_g": 150,
+                "kcal": 30,
+                "proteines_g": 3.3,
+                "glucides_g": 5.85,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Huile d'olive",
+                "quantite_g": 15,
+                "kcal": 132.6,
+                "proteines_g": 0,
+                "glucides_g": 0,
+                "lipides_g": 15
+              }
+            ]
+          },
+          {
+            "type": "collation",
+            "nom_plat": "Banane beurre de cacahuète amandes",
+            "aliments": [
+              {
+                "nom": "Banane",
+                "quantite_g": 120,
+                "kcal": 106.8,
+                "proteines_g": 1.32,
+                "glucides_g": 27.6,
+                "lipides_g": 0.36
+              },
+              {
+                "nom": "Beurre de cacahuète",
+                "quantite_g": 20,
+                "kcal": 117.6,
+                "proteines_g": 5,
+                "glucides_g": 4,
+                "lipides_g": 10
+              },
+              {
+                "nom": "Amandes",
+                "quantite_g": 15,
+                "kcal": 86.85,
+                "proteines_g": 3.15,
+                "glucides_g": 3.3,
+                "lipides_g": 7.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

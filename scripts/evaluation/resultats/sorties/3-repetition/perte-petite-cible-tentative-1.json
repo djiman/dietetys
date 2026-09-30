@@ -1,0 +1,694 @@
+{
+  "cibles": {
+    "kcal": 1250,
+    "proteines_g": 94,
+    "glucides_g": 125,
+    "lipides_g": 42
+  },
+  "controles_echoues": [],
+  "sortie": {
+    "jours": [
+      {
+        "numero": 1,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Yaourt grec, avoine et banane",
+            "aliments": [
+              {
+                "nom": "Yaourt grec nature",
+                "quantite_g": 150,
+                "kcal": 100,
+                "proteines_g": 10,
+                "glucides_g": 4,
+                "lipides_g": 4
+              },
+              {
+                "nom": "Flocons d'avoine",
+                "quantite_g": 40,
+                "kcal": 150,
+                "proteines_g": 5,
+                "glucides_g": 27,
+                "lipides_g": 3
+              },
+              {
+                "nom": "Banane",
+                "quantite_g": 100,
+                "kcal": 90,
+                "proteines_g": 1,
+                "glucides_g": 23,
+                "lipides_g": 0
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Poulet grillé, riz et brocolis",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet grillé",
+                "quantite_g": 150,
+                "kcal": 248,
+                "proteines_g": 46,
+                "glucides_g": 0,
+                "lipides_g": 5
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 150,
+                "kcal": 195,
+                "proteines_g": 4,
+                "glucides_g": 42,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Brocoli cuit",
+                "quantite_g": 150,
+                "kcal": 49,
+                "proteines_g": 4,
+                "glucides_g": 7,
+                "lipides_g": 0.5
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Saumon, quinoa et haricots verts",
+            "aliments": [
+              {
+                "nom": "Filet de saumon",
+                "quantite_g": 130,
+                "kcal": 246,
+                "proteines_g": 26,
+                "glucides_g": 0,
+                "lipides_g": 16
+              },
+              {
+                "nom": "Quinoa cuit",
+                "quantite_g": 100,
+                "kcal": 120,
+                "proteines_g": 4,
+                "glucides_g": 21,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Haricots verts",
+                "quantite_g": 150,
+                "kcal": 52,
+                "proteines_g": 3,
+                "glucides_g": 9,
+                "lipides_g": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Fromage blanc, muesli et pomme",
+            "aliments": [
+              {
+                "nom": "Fromage blanc",
+                "quantite_g": 150,
+                "kcal": 110,
+                "proteines_g": 12,
+                "glucides_g": 6,
+                "lipides_g": 3
+              },
+              {
+                "nom": "Muesli",
+                "quantite_g": 40,
+                "kcal": 150,
+                "proteines_g": 4,
+                "glucides_g": 27,
+                "lipides_g": 3
+              },
+              {
+                "nom": "Pomme",
+                "quantite_g": 150,
+                "kcal": 78,
+                "proteines_g": 0.5,
+                "glucides_g": 20,
+                "lipides_g": 0.3
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Steak haché, pâtes et courgettes",
+            "aliments": [
+              {
+                "nom": "Steak haché 5% MG",
+                "quantite_g": 150,
+                "kcal": 255,
+                "proteines_g": 39,
+                "glucides_g": 0,
+                "lipides_g": 10
+              },
+              {
+                "nom": "Pâtes cuites",
+                "quantite_g": 150,
+                "kcal": 222,
+                "proteines_g": 8,
+                "glucides_g": 45,
+                "lipides_g": 1.5
+              },
+              {
+                "nom": "Courgettes cuites",
+                "quantite_g": 150,
+                "kcal": 36,
+                "proteines_g": 2,
+                "glucides_g": 6,
+                "lipides_g": 0.3
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Cabillaud, riz et épinards",
+            "aliments": [
+              {
+                "nom": "Cabillaud",
+                "quantite_g": 180,
+                "kcal": 160,
+                "proteines_g": 38,
+                "glucides_g": 0,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 120,
+                "kcal": 156,
+                "proteines_g": 3,
+                "glucides_g": 34,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Épinards cuits",
+                "quantite_g": 150,
+                "kcal": 35,
+                "proteines_g": 3,
+                "glucides_g": 4,
+                "lipides_g": 0.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Œufs, pain complet et avocat",
+            "aliments": [
+              {
+                "nom": "Œufs entiers",
+                "quantite_g": 120,
+                "kcal": 186,
+                "proteines_g": 15,
+                "glucides_g": 1,
+                "lipides_g": 13
+              },
+              {
+                "nom": "Pain complet",
+                "quantite_g": 60,
+                "kcal": 150,
+                "proteines_g": 6,
+                "glucides_g": 27,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Avocat",
+                "quantite_g": 50,
+                "kcal": 80,
+                "proteines_g": 1,
+                "glucides_g": 4,
+                "lipides_g": 7
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Dinde, patate douce et haricots verts",
+            "aliments": [
+              {
+                "nom": "Escalope de dinde",
+                "quantite_g": 150,
+                "kcal": 210,
+                "proteines_g": 42,
+                "glucides_g": 0,
+                "lipides_g": 4
+              },
+              {
+                "nom": "Patate douce cuite",
+                "quantite_g": 150,
+                "kcal": 135,
+                "proteines_g": 2,
+                "glucides_g": 31,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Haricots verts",
+                "quantite_g": 100,
+                "kcal": 35,
+                "proteines_g": 2,
+                "glucides_g": 6,
+                "lipides_g": 0.2
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Thon, riz et poivrons",
+            "aliments": [
+              {
+                "nom": "Thon au naturel",
+                "quantite_g": 150,
+                "kcal": 156,
+                "proteines_g": 35,
+                "glucides_g": 0,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 130,
+                "kcal": 169,
+                "proteines_g": 3,
+                "glucides_g": 37,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Poivrons",
+                "quantite_g": 150,
+                "kcal": 45,
+                "proteines_g": 1.5,
+                "glucides_g": 9,
+                "lipides_g": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Yaourt grec, granola et fruits rouges",
+            "aliments": [
+              {
+                "nom": "Yaourt grec nature",
+                "quantite_g": 150,
+                "kcal": 100,
+                "proteines_g": 10,
+                "glucides_g": 4,
+                "lipides_g": 4
+              },
+              {
+                "nom": "Granola",
+                "quantite_g": 40,
+                "kcal": 170,
+                "proteines_g": 4,
+                "glucides_g": 26,
+                "lipides_g": 5
+              },
+              {
+                "nom": "Fruits rouges",
+                "quantite_g": 100,
+                "kcal": 50,
+                "proteines_g": 1,
+                "glucides_g": 11,
+                "lipides_g": 0.3
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Poulet curry, riz et légumes",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet",
+                "quantite_g": 150,
+                "kcal": 248,
+                "proteines_g": 46,
+                "glucides_g": 0,
+                "lipides_g": 5
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 150,
+                "kcal": 195,
+                "proteines_g": 4,
+                "glucides_g": 42,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Légumes sautés poivron oignon",
+                "quantite_g": 150,
+                "kcal": 60,
+                "proteines_g": 2,
+                "glucides_g": 11,
+                "lipides_g": 1
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Omelette, salade et pain complet",
+            "aliments": [
+              {
+                "nom": "Œufs entiers",
+                "quantite_g": 150,
+                "kcal": 232,
+                "proteines_g": 19,
+                "glucides_g": 1,
+                "lipides_g": 16
+              },
+              {
+                "nom": "Pain complet",
+                "quantite_g": 60,
+                "kcal": 150,
+                "proteines_g": 6,
+                "glucides_g": 27,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Salade verte et tomate",
+                "quantite_g": 150,
+                "kcal": 30,
+                "proteines_g": 1.5,
+                "glucides_g": 5,
+                "lipides_g": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Porridge, noix et banane",
+            "aliments": [
+              {
+                "nom": "Flocons d'avoine",
+                "quantite_g": 50,
+                "kcal": 188,
+                "proteines_g": 6,
+                "glucides_g": 34,
+                "lipides_g": 4
+              },
+              {
+                "nom": "Lait demi-écrémé",
+                "quantite_g": 200,
+                "kcal": 96,
+                "proteines_g": 7,
+                "glucides_g": 10,
+                "lipides_g": 3.6
+              },
+              {
+                "nom": "Noix",
+                "quantite_g": 15,
+                "kcal": 98,
+                "proteines_g": 2,
+                "glucides_g": 2,
+                "lipides_g": 9.5
+              },
+              {
+                "nom": "Banane",
+                "quantite_g": 80,
+                "kcal": 72,
+                "proteines_g": 0.8,
+                "glucides_g": 18,
+                "lipides_g": 0.2
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Bœuf sauté, riz et brocolis",
+            "aliments": [
+              {
+                "nom": "Bœuf émincé",
+                "quantite_g": 130,
+                "kcal": 221,
+                "proteines_g": 33,
+                "glucides_g": 0,
+                "lipides_g": 9
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 120,
+                "kcal": 156,
+                "proteines_g": 3,
+                "glucides_g": 34,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Brocoli cuit",
+                "quantite_g": 150,
+                "kcal": 49,
+                "proteines_g": 4,
+                "glucides_g": 7,
+                "lipides_g": 0.5
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Colin, pommes de terre et haricots verts",
+            "aliments": [
+              {
+                "nom": "Colin",
+                "quantite_g": 180,
+                "kcal": 162,
+                "proteines_g": 36,
+                "glucides_g": 0,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Pommes de terre cuites",
+                "quantite_g": 200,
+                "kcal": 172,
+                "proteines_g": 4,
+                "glucides_g": 38,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Haricots verts",
+                "quantite_g": 130,
+                "kcal": 46,
+                "proteines_g": 2.5,
+                "glucides_g": 8,
+                "lipides_g": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Tartines fromage, œuf dur et orange",
+            "aliments": [
+              {
+                "nom": "Pain complet",
+                "quantite_g": 60,
+                "kcal": 150,
+                "proteines_g": 6,
+                "glucides_g": 27,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Emmental",
+                "quantite_g": 30,
+                "kcal": 113,
+                "proteines_g": 8,
+                "glucides_g": 0.3,
+                "lipides_g": 9
+              },
+              {
+                "nom": "Œuf dur",
+                "quantite_g": 50,
+                "kcal": 78,
+                "proteines_g": 6,
+                "glucides_g": 0.5,
+                "lipides_g": 5.5
+              },
+              {
+                "nom": "Orange",
+                "quantite_g": 150,
+                "kcal": 70,
+                "proteines_g": 1.5,
+                "glucides_g": 16,
+                "lipides_g": 0.2
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Poulet rôti, quinoa et poivrons",
+            "aliments": [
+              {
+                "nom": "Blanc de poulet rôti",
+                "quantite_g": 150,
+                "kcal": 248,
+                "proteines_g": 46,
+                "glucides_g": 0,
+                "lipides_g": 5
+              },
+              {
+                "nom": "Quinoa cuit",
+                "quantite_g": 120,
+                "kcal": 144,
+                "proteines_g": 5,
+                "glucides_g": 25,
+                "lipides_g": 2.4
+              },
+              {
+                "nom": "Poivrons",
+                "quantite_g": 130,
+                "kcal": 39,
+                "proteines_g": 1.3,
+                "glucides_g": 7.8,
+                "lipides_g": 0.3
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Crevettes, riz et légumes sautés",
+            "aliments": [
+              {
+                "nom": "Crevettes cuites",
+                "quantite_g": 150,
+                "kcal": 135,
+                "proteines_g": 27,
+                "glucides_g": 1,
+                "lipides_g": 2
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 150,
+                "kcal": 195,
+                "proteines_g": 4,
+                "glucides_g": 42,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Légumes sautés",
+                "quantite_g": 150,
+                "kcal": 60,
+                "proteines_g": 2,
+                "glucides_g": 11,
+                "lipides_g": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "repas": [
+          {
+            "type": "petit_dejeuner",
+            "nom_plat": "Skyr, fruits secs et pain complet",
+            "aliments": [
+              {
+                "nom": "Skyr nature",
+                "quantite_g": 150,
+                "kcal": 90,
+                "proteines_g": 16,
+                "glucides_g": 5,
+                "lipides_g": 0.3
+              },
+              {
+                "nom": "Abricots secs",
+                "quantite_g": 40,
+                "kcal": 100,
+                "proteines_g": 1,
+                "glucides_g": 22,
+                "lipides_g": 0.2
+              },
+              {
+                "nom": "Pain complet",
+                "quantite_g": 50,
+                "kcal": 125,
+                "proteines_g": 5,
+                "glucides_g": 22,
+                "lipides_g": 1.7
+              }
+            ]
+          },
+          {
+            "type": "dejeuner",
+            "nom_plat": "Saumon, pâtes et épinards",
+            "aliments": [
+              {
+                "nom": "Filet de saumon",
+                "quantite_g": 130,
+                "kcal": 246,
+                "proteines_g": 26,
+                "glucides_g": 0,
+                "lipides_g": 16
+              },
+              {
+                "nom": "Pâtes cuites",
+                "quantite_g": 150,
+                "kcal": 222,
+                "proteines_g": 8,
+                "glucides_g": 45,
+                "lipides_g": 1.5
+              },
+              {
+                "nom": "Épinards cuits",
+                "quantite_g": 150,
+                "kcal": 35,
+                "proteines_g": 3,
+                "glucides_g": 4,
+                "lipides_g": 0.7
+              }
+            ]
+          },
+          {
+            "type": "diner",
+            "nom_plat": "Dinde, riz et courgettes",
+            "aliments": [
+              {
+                "nom": "Escalope de dinde",
+                "quantite_g": 150,
+                "kcal": 210,
+                "proteines_g": 42,
+                "glucides_g": 0,
+                "lipides_g": 4
+              },
+              {
+                "nom": "Riz basmati cuit",
+                "quantite_g": 130,
+                "kcal": 169,
+                "proteines_g": 3,
+                "glucides_g": 37,
+                "lipides_g": 1
+              },
+              {
+                "nom": "Courgettes cuites",
+                "quantite_g": 150,
+                "kcal": 36,
+                "proteines_g": 2,
+                "glucides_g": 6,
+                "lipides_g": 0.3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

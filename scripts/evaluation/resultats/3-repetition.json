@@ -1,8 +1,8 @@
 {
-  "campagne": "1-prompt-actuel",
+  "campagne": "3-repetition",
   "modele": "claude-sonnet-5",
-  "version_prompt": "a819eaee2660",
-  "date": "2026-09-30T08:25:42.350Z",
+  "version_prompt": "a671be194fbb",
+  "date": "2026-09-30T10:01:59.841Z",
   "resultats": [
     {
       "nom": "Perte, petite cible",
@@ -11,9 +11,9 @@
       "valide_premier_essai": true,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": 0.06986857142857159,
-      "cout_usd": 0.1762625,
-      "latence_s": 129.45
+      "ecart_calorique_moyen": -0.01965714285714285,
+      "cout_usd": 0.10874,
+      "latence_s": 80.677
     },
     {
       "nom": "Perte, grande cible",
@@ -22,9 +22,9 @@
       "valide_premier_essai": false,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": -0.06681733021077282,
-      "cout_usd": 0.4145676,
-      "latence_s": 266.748
+      "ecart_calorique_moyen": -0.08281733021077278,
+      "cout_usd": 0.41683919999999997,
+      "latence_s": 258.145
     },
     {
       "nom": "Maintien, petite cible",
@@ -33,20 +33,20 @@
       "valide_premier_essai": true,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": -0.038400000000000024,
-      "cout_usd": 0.1011118,
-      "latence_s": 79.096
+      "ecart_calorique_moyen": 0.003280000000000013,
+      "cout_usd": 0.11782160000000001,
+      "latence_s": 89.123
     },
     {
       "nom": "Maintien, grande cible",
       "cible_kcal": 3100,
-      "tentatives": 2,
-      "valide_premier_essai": false,
+      "tentatives": 1,
+      "valide_premier_essai": true,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": -0.07687788018433181,
-      "cout_usd": 0.3925996,
-      "latence_s": 252.115
+      "ecart_calorique_moyen": -0.06618663594470044,
+      "cout_usd": 0.2457016,
+      "latence_s": 391.683
     },
     {
       "nom": "Prise, petite cible",
@@ -55,9 +55,9 @@
       "valide_premier_essai": true,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": -0.07562857142857142,
-      "cout_usd": 0.15388179999999999,
-      "latence_s": 118.862
+      "ecart_calorique_moyen": -0.07626428571428572,
+      "cout_usd": 0.20016,
+      "latence_s": 150.793
     },
     {
       "nom": "Prise, grande cible",
@@ -66,18 +66,18 @@
       "valide_premier_essai": false,
       "valide": true,
       "raison_echec": null,
-      "ecart_calorique_moyen": -0.08419529837251352,
-      "cout_usd": 0.5248356,
-      "latence_s": 357.254
+      "ecart_calorique_moyen": -0.05522784810126583,
+      "cout_usd": 0.4808612,
+      "latence_s": 307.804
     }
   ],
   "resume": {
     "profils": 6,
-    "taux_valide_premier_essai": 0.5,
+    "taux_valide_premier_essai": 0.6666666666666666,
     "taux_valide": 1,
-    "ecart_calorique_moyen": -0.045341751461269675,
-    "cout_moyen_usd": 0.2938764833333333,
-    "cout_total_usd": 1.7632588999999999,
-    "latence_moyenne_s": 200.5875
+    "ecart_calorique_moyen": -0.0494788738046946,
+    "cout_moyen_usd": 0.2616872666666667,
+    "cout_total_usd": 1.5701236,
+    "latence_moyenne_s": 213.0375
   }
 }

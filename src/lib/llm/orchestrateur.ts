@@ -4,6 +4,7 @@ import { menuSchema, type Cibles, type Menu } from "@/lib/contracts";
 import { validerMenu, type NomControle } from "@/lib/validation";
 import {
   PROMPT_SYSTEME,
+  VERSION_PROMPT,
   construireMessageCibles,
   construireMessageRelance,
 } from "./prompt";
@@ -114,7 +115,14 @@ function analyserReponse(reponse: Anthropic.Message, cibles: Cibles): Analyse {
 
 /** Une ligne JSON par appel ; jamais le menu ni de données personnelles. */
 function journaliser(entree: Record<string, unknown>): void {
-  console.log(JSON.stringify({ evenement: "generation_menu", modele: MODELE, ...entree }));
+  console.log(
+    JSON.stringify({
+      evenement: "generation_menu",
+      modele: MODELE,
+      version_prompt: VERSION_PROMPT,
+      ...entree,
+    })
+  );
 }
 
 /**

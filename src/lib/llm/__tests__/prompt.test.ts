@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   PROMPT_SYSTEME,
+  VERSION_PROMPT,
   construireMessageCibles,
   construireMessageRelance,
 } from "../prompt";
@@ -11,6 +12,12 @@ describe("PROMPT_SYSTEME", () => {
     expect(PROMPT_SYSTEME).toContain("±10 % de la cible");
     expect(PROMPT_SYSTEME).toContain("au moins 90 % de la cible");
     expect(PROMPT_SYSTEME).toContain("au plus 2 fois");
+  });
+});
+
+describe("VERSION_PROMPT", () => {
+  it("est une empreinte courte du prompt système", () => {
+    expect(VERSION_PROMPT).toMatch(/^[0-9a-f]{12}$/);
   });
 });
 

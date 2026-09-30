@@ -23,7 +23,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM), phase 5 (évaluations) ; 89 tests.
+  LLM), phase 5 (évaluations) ; 99 tests.
 - À faire : phase 6 (route API), phase 7 (frontend), phase 8
   (finalisation). L'ordre des tâches est dans la base Notion « Tâches
   Dietetys ».
@@ -47,7 +47,11 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   arguments (appel facturé, 1 à 6 minutes).
 - `scripts/evaluation/` — évaluations : jeu fixe de 6 profils, mesures
   (validité, écart calorique, coût, latence) et script de campagne, dont
-  les résultats sont écrits dans `resultats/`.
+  les résultats sont écrits dans `resultats/`, avec la version du prompt.
+  Les réponses brutes du modèle (`resultats/sorties/`) sont rejouées par
+  les tests de la validation.
+- `.github/workflows/verification.yml` — types, lint et tests à chaque push
+  sur `main` et à chaque pull request.
 
 ## Conventions de code
 

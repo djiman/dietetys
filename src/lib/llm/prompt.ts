@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type { Cibles } from "@/lib/contracts";
 import {
   OCCURRENCES_MAX_PLAT,
@@ -44,6 +45,13 @@ Ton menu est vérifié automatiquement ; il est refusé si l'un de ces critères
 4. Diversité : un même plat apparaît au plus ${OCCURRENCES_MAX_PLAT} fois sur la semaine parmi les déjeuners et les dîners. Les petits-déjeuners peuvent se répéter.
 
 Avant de répondre, additionne les kcal et les protéines des aliments de chaque jour et vérifie les critères 2 et 3. Si un jour est sous la cible, augmente les quantités de ses aliments, en gardant des valeurs cohérentes, avant de répondre.`;
+
+/**
+ * Empreinte du prompt système, journalisée avec chaque appel et enregistrée
+ * avec chaque campagne d'évaluation : relie un résultat au prompt qui l'a
+ * produit sans passer par l'historique git.
+ */
+export const VERSION_PROMPT = createHash("sha256").update(PROMPT_SYSTEME).digest("hex").slice(0, 12);
 
 export function construireMessageCibles(cibles: Cibles): string {
   return `Cibles journalières :
