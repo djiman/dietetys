@@ -23,7 +23,8 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM) ; 76 tests.
+  LLM), jeu de 6 profils d'évaluation (`scripts/evaluation/profils.ts`) ;
+  83 tests.
 - À faire : évaluations, route API, frontend. Voir la spécification pour l'ordre des tâches restantes.
 
 ## Structure
