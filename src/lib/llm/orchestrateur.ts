@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { menuSchema, type Cibles, type Menu } from "@/lib/contracts";
 import { validerMenu, type NomControle } from "@/lib/validation";
+import { calculerCoutAppel } from "./cout";
 import {
   PROMPT_SYSTEME,
   VERSION_PROMPT,
@@ -28,11 +29,18 @@ const MAX_TOKENS = 64000;
 const EFFORT = "medium";
 
 /**
- * Délai par tentative. Le SDK réessaie 2 fois par défaut (surcharge, limite
- * de débit, réseau) et la validation peut relancer une fois : le pire cas
- * dépasse donc largement ce délai, ce dont le client HTTP doit tenir compte.
+ * Délai d'attente des en-têtes de réponse, par appel HTTP. En streaming, le
+ * SDK ne l'applique pas au corps : un flux peut durer bien au-delà (392 s
+ * mesurées pour une tentative). C'est DELAI_GENERATION_MS qui borne tout.
  */
 const DELAI_MS = 180_000;
+
+/**
+ * Échéance de toute la génération : deux tentatives, réessais du SDK
+ * compris. Le pire cas mesuré en phase 5 est de 392 s pour une seule
+ * tentative ; le client HTTP doit attendre au moins aussi longtemps.
+ */
+export const DELAI_GENERATION_MS = 600_000;
 
 export type RaisonEchec =
   | "validation"
@@ -46,7 +54,8 @@ export type ResultatGeneration =
   | { ok: false; raison: RaisonEchec };
 
 export type AppelerModele = (
-  messages: Anthropic.MessageParam[]
+  messages: Anthropic.MessageParam[],
+  signal: AbortSignal
 ) => Promise<Anthropic.Message>;
 
 let client: Anthropic | undefined;
@@ -65,20 +74,23 @@ const { type: typeFormat, schema: schemaMenu } = zodOutputFormat(menuSchema);
 
 // Streaming recommandé pour une sortie de cette taille : il évite les délais
 // d'expiration HTTP. finalMessage() rend la réponse complète.
-export const appelerClaude: AppelerModele = (messages) =>
+export const appelerClaude: AppelerModele = (messages, signal) =>
   obtenirClient()
-    .messages.stream({
-      model: MODELE,
-      max_tokens: MAX_TOKENS,
-      system: [
-        { type: "text", text: PROMPT_SYSTEME, cache_control: { type: "ephemeral" } },
-      ],
-      output_config: {
-        format: { type: typeFormat, schema: schemaMenu },
-        effort: EFFORT,
+    .messages.stream(
+      {
+        model: MODELE,
+        max_tokens: MAX_TOKENS,
+        system: [
+          { type: "text", text: PROMPT_SYSTEME, cache_control: { type: "ephemeral" } },
+        ],
+        output_config: {
+          format: { type: typeFormat, schema: schemaMenu },
+          effort: EFFORT,
+        },
+        messages,
       },
-      messages,
-    })
+      { signal }
+    )
     .finalMessage();
 
 type Analyse =
@@ -133,8 +145,24 @@ function journaliser(entree: Record<string, unknown>): void {
  */
 export async function genererMenu(
   cibles: Cibles,
-  appelerModele: AppelerModele = appelerClaude
+  {
+    appelerModele = appelerClaude,
+    signal,
+    idRequete,
+  }: {
+    appelerModele?: AppelerModele;
+    /** Annulation par l'appelant, par exemple quand le client se déconnecte. */
+    signal?: AbortSignal;
+    /** Relie dans les logs les tentatives d'une même requête. */
+    idRequete?: string;
+  } = {}
 ): Promise<ResultatGeneration> {
+  // Un appel annulé lève une APIUserAbortError, traitée comme toute erreur
+  // d'API : la génération échoue proprement au lieu de pendre.
+  const signalGeneration = AbortSignal.any([
+    AbortSignal.timeout(DELAI_GENERATION_MS),
+    ...(signal ? [signal] : []),
+  ]);
   const messages: Anthropic.MessageParam[] = [
     { role: "user", content: construireMessageCibles(cibles) },
   ];
@@ -143,10 +171,11 @@ export async function genererMenu(
     const debut = Date.now();
     let reponse: Anthropic.Message;
     try {
-      reponse = await appelerModele(messages);
+      reponse = await appelerModele(messages, signalGeneration);
     } catch (erreur) {
       if (!(erreur instanceof Anthropic.APIError)) throw erreur;
       journaliser({
+        id_requete: idRequete ?? null,
         tentative,
         cibles,
         latence_ms: Date.now() - debut,
@@ -159,12 +188,14 @@ export async function genererMenu(
 
     const analyse = analyserReponse(reponse, cibles);
     journaliser({
+      id_requete: idRequete ?? null,
       tentative,
       cibles,
       tokens_entree: reponse.usage.input_tokens,
       tokens_sortie: reponse.usage.output_tokens,
       tokens_cache_ecriture: reponse.usage.cache_creation_input_tokens ?? 0,
       tokens_cache_lecture: reponse.usage.cache_read_input_tokens ?? 0,
+      cout_usd: calculerCoutAppel(MODELE, reponse.usage),
       latence_ms: Date.now() - debut,
       stop_reason: reponse.stop_reason,
       controles_echoues:

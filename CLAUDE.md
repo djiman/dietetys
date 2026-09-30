@@ -23,7 +23,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM), phase 5 (évaluations) ; 99 tests.
+  LLM), phase 5 (évaluations) ; 104 tests.
 - À faire : phase 6 (route API), phase 7 (frontend), phase 8
   (finalisation). L'ordre des tâches est dans la base Notion « Tâches
   Dietetys ».
@@ -41,7 +41,13 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   relance.
 - `src/lib/llm/` — prompt et orchestrateur : `genererMenu(cibles)` appelle
   Claude (sortie structurée), valide, relance une fois avec les erreurs et
-  journalise chaque appel en JSON. Aucun calcul nutritionnel ici.
+  journalise chaque appel en JSON (identifiant de requête, coût). Toute la
+  génération est bornée à 10 minutes. Aucun calcul nutritionnel ici.
+- `src/app/api/menu/route.ts` — `POST /api/menu` : validation de l'entrée,
+  règle de sécurité, limitation de débit, génération ; réponses 200, 400,
+  422, 429, 502.
+- `src/lib/api/` — limitation de débit en mémoire (une génération à la
+  fois, 10 par heure).
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
 - `scripts/menu.ts` — génère et affiche le menu d'un profil passé en
   arguments (appel facturé, 1 à 6 minutes).

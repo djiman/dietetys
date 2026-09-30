@@ -19,12 +19,12 @@ import {
   MODELE,
   VERSION_PROMPT,
   appelerClaude,
+  calculerCoutAppel,
   genererMenu,
   type AppelerModele,
 } from "../../src/lib/llm";
 import { validerMenu } from "../../src/lib/validation";
 import {
-  calculerCoutAppel,
   calculerEcartCaloriqueMoyen,
   resumerCampagne,
   type ResultatProfil,
@@ -85,14 +85,14 @@ async function evaluerProfil(
   // genererMenu ne renvoie que le menu : l'appel réel est enveloppé pour
   // compter les tentatives et les tokens consommés, relance comprise.
   const reponses: Anthropic.Message[] = [];
-  const appelerEtMesurer: AppelerModele = async (messages) => {
-    const reponse = await appelerClaude(messages);
+  const appelerEtMesurer: AppelerModele = async (messages, signal) => {
+    const reponse = await appelerClaude(messages, signal);
     reponses.push(reponse);
     return reponse;
   };
 
   const debut = Date.now();
-  const resultat = await genererMenu(cibles, appelerEtMesurer);
+  const resultat = await genererMenu(cibles, { appelerModele: appelerEtMesurer });
   enregistrerSorties(dossierSorties, nom, cibles, reponses);
   return {
     nom,

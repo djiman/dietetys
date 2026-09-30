@@ -54,14 +54,14 @@ describe("genererMenu", () => {
 
   it("renvoie le menu valide dès le premier appel", async () => {
     const { appeler, appels } = fauxModele(reponse(MENU_VALIDE));
-    const resultat = await genererMenu(CIBLES_FICTIVES, appeler);
+    const resultat = await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler });
     expect(resultat).toEqual({ ok: true, menu: construireMenuFictif() });
     expect(appels).toHaveLength(1);
   });
 
   it("n'envoie au modèle que les cibles", async () => {
     const { appeler, appels } = fauxModele(reponse(MENU_VALIDE));
-    await genererMenu(CIBLES_FICTIVES, appeler);
+    await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler });
     expect(appels[0]).toEqual([
       { role: "user", content: expect.stringContaining("2000 kcal") },
     ]);
@@ -70,7 +70,7 @@ describe("genererMenu", () => {
   it("relance une fois en continuant la conversation avec les erreurs", async () => {
     const premiere = reponse(menuInvalide());
     const { appeler, appels } = fauxModele(premiere, reponse(MENU_VALIDE));
-    const resultat = await genererMenu(CIBLES_FICTIVES, appeler);
+    const resultat = await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler });
 
     expect(resultat.ok).toBe(true);
     expect(appels).toHaveLength(2);
@@ -86,7 +86,7 @@ describe("genererMenu", () => {
       reponse(menuInvalide()),
       reponse(menuInvalide())
     );
-    const resultat = await genererMenu(CIBLES_FICTIVES, appeler);
+    const resultat = await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler });
     expect(resultat).toEqual({ ok: false, raison: "validation" });
     expect(appels).toHaveLength(2);
   });
@@ -96,13 +96,13 @@ describe("genererMenu", () => {
       reponse("{ pas du json"),
       reponse(MENU_VALIDE)
     );
-    expect((await genererMenu(CIBLES_FICTIVES, appeler)).ok).toBe(true);
+    expect((await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).ok).toBe(true);
     expect(appels[1][2].content).toContain("pas un JSON valide");
   });
 
   it("signale un JSON invalide deux fois de suite", async () => {
     const { appeler } = fauxModele(reponse("{"), reponse("{"));
-    expect(await genererMenu(CIBLES_FICTIVES, appeler)).toEqual({
+    expect(await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).toEqual({
       ok: false,
       raison: "json_invalide",
     });
@@ -110,7 +110,7 @@ describe("genererMenu", () => {
 
   it("abandonne sans relance une réponse tronquée", async () => {
     const { appeler, appels } = fauxModele(reponse('{"jours": [', "max_tokens"));
-    expect(await genererMenu(CIBLES_FICTIVES, appeler)).toEqual({
+    expect(await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).toEqual({
       ok: false,
       raison: "troncature",
     });
@@ -119,7 +119,7 @@ describe("genererMenu", () => {
 
   it("abandonne sans relance un refus du modèle", async () => {
     const { appeler, appels } = fauxModele(reponse("", "refusal"));
-    expect(await genererMenu(CIBLES_FICTIVES, appeler)).toEqual({
+    expect(await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).toEqual({
       ok: false,
       raison: "refus",
     });
@@ -134,31 +134,45 @@ describe("genererMenu", () => {
       new Headers()
     );
     const { appeler } = fauxModele(surcharge);
-    expect(await genererMenu(CIBLES_FICTIVES, appeler)).toEqual({
+    expect(await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).toEqual({
       ok: false,
       raison: "api",
     });
   });
 
+  it("transmet l'annulation de l'appelant au modèle et échoue proprement", async () => {
+    const controleur = new AbortController();
+    controleur.abort();
+    const appeler: AppelerModele = async (_messages, signal) => {
+      if (signal.aborted) throw new Anthropic.APIUserAbortError();
+      return reponse(MENU_VALIDE);
+    };
+    expect(
+      await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler, signal: controleur.signal })
+    ).toEqual({ ok: false, raison: "api" });
+  });
+
   it("propage une erreur qui ne vient pas de l'API", async () => {
     const { appeler } = fauxModele(new TypeError("bogue"));
-    await expect(genererMenu(CIBLES_FICTIVES, appeler)).rejects.toThrow("bogue");
+    await expect(genererMenu(CIBLES_FICTIVES, { appelerModele: appeler })).rejects.toThrow("bogue");
   });
 
   it("journalise chaque appel sans le contenu du menu", async () => {
     const { appeler } = fauxModele(reponse(menuInvalide()), reponse(MENU_VALIDE));
-    await genererMenu(CIBLES_FICTIVES, appeler);
+    await genererMenu(CIBLES_FICTIVES, { appelerModele: appeler, idRequete: "requete-1" });
 
     const lignes = vi.mocked(console.log).mock.calls.map(([ligne]) => JSON.parse(ligne));
     expect(lignes).toHaveLength(2);
     expect(lignes[0]).toMatchObject({
       evenement: "generation_menu",
+      id_requete: "requete-1",
       tentative: 1,
       tokens_sortie: 9000,
+      cout_usd: 0.092,
       controles_echoues: ["diversite"],
       valide: false,
     });
-    expect(lignes[1]).toMatchObject({ tentative: 2, valide: true });
+    expect(lignes[1]).toMatchObject({ id_requete: "requete-1", tentative: 2, valide: true });
     expect(JSON.stringify(lignes)).not.toContain("Poulet");
   });
 });
