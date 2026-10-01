@@ -13,6 +13,12 @@ Spécification complète (architecture, contrats, validation, résultats des
 évaluations, bilan) :
 [Dietetys – Spécification MVP](https://claude.ai/code/artifact/cdbee86f-d3d5-4a03-bf42-98e39c0cbfb4).
 
+![Démo : saisie du profil, génération et menu de la semaine](docs/demo.webp)
+
+*Démo de 35 secondes. Le menu affiché est un vrai menu produit par Claude
+pendant les évaluations ; l'attente (1 à 6 minutes en réalité) a été
+raccourcie.*
+
 ![Le profil et la semaine en un coup d'œil](docs/captures/menu-semaine.png)
 
 | Détail d'un jour | Mode sombre | Mobile |
