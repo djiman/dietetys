@@ -1,4 +1,4 @@
-import type { Aliment, Cibles, Jour } from "@/lib/contracts";
+import type { Aliment, Cibles, Jour, Repas } from "@/lib/contracts";
 import {
   KCAL_PAR_G_GLUCIDES,
   KCAL_PAR_G_LIPIDES,
@@ -24,20 +24,27 @@ export function calculerKcalAtwater(aliment: Aliment): number {
   );
 }
 
-/**
- * Somme des valeurs de tous les aliments du jour, collation comprise. Le
- * LLM ne fournit aucun total : ils sont toujours recalculés ici. Pas
- * d'arrondi : c'est une affaire d'affichage.
- */
-export function calculerTotauxJour(jour: Jour): Totaux {
+function additionner(aliments: Aliment[]): Totaux {
   const totaux: Totaux = { kcal: 0, proteines_g: 0, glucides_g: 0, lipides_g: 0 };
-  for (const repas of jour.repas) {
-    for (const aliment of repas.aliments) {
-      totaux.kcal += aliment.kcal;
-      totaux.proteines_g += aliment.proteines_g;
-      totaux.glucides_g += aliment.glucides_g;
-      totaux.lipides_g += aliment.lipides_g;
-    }
+  for (const aliment of aliments) {
+    totaux.kcal += aliment.kcal;
+    totaux.proteines_g += aliment.proteines_g;
+    totaux.glucides_g += aliment.glucides_g;
+    totaux.lipides_g += aliment.lipides_g;
   }
   return totaux;
+}
+
+/**
+ * Somme des valeurs des aliments d'un repas. Le LLM ne fournit aucun total :
+ * ils sont toujours recalculés ici. Pas d'arrondi : c'est une affaire
+ * d'affichage.
+ */
+export function calculerTotauxRepas(repas: Repas): Totaux {
+  return additionner(repas.aliments);
+}
+
+/** Somme des valeurs de tous les aliments du jour, collation comprise. */
+export function calculerTotauxJour(jour: Jour): Totaux {
+  return additionner(jour.repas.flatMap((repas) => repas.aliments));
 }

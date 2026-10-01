@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Jour } from "@/lib/contracts";
-import { calculerKcalAtwater, calculerTotauxJour } from "../menu";
+import { calculerKcalAtwater, calculerTotauxJour, calculerTotauxRepas } from "../menu";
 
 const riz = {
   nom: "Riz basmati cuit",
@@ -33,6 +33,17 @@ describe("calculerKcalAtwater", () => {
   it("applique 4 kcal/g aux protéines et glucides, 9 kcal/g aux lipides", () => {
     // 5 * 4 + 56 * 4 + 1 * 9
     expect(calculerKcalAtwater(riz)).toBe(253);
+  });
+});
+
+describe("calculerTotauxRepas", () => {
+  it("additionne les aliments du repas", () => {
+    expect(calculerTotauxRepas(jour.repas[1])).toEqual({
+      kcal: 320,
+      proteines_g: 10,
+      glucides_g: 62,
+      lipides_g: 3,
+    });
   });
 });
 

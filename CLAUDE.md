@@ -24,7 +24,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
   LLM), phase 5 (évaluations), phase 6 (route API), phase 7 (frontend) ;
-  143 tests.
+  146 tests.
 - À faire : phase 8 (finalisation). L'ordre des tâches est dans la base
   Notion « Tâches Dietetys ».
 
@@ -52,8 +52,8 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   — frontend : formulaire de profil validé côté client avec le schéma
   d'entrée du serveur (`src/lib/formulaire.ts` convertit la saisie), puis
   appel à la route (`src/lib/appelMenu.ts`) avec chargement, annulation et
-  délai de 11 minutes, et affichage du menu (`src/app/AffichageMenu.tsx`,
-  un bloc repliable par jour). Le contrat de réponse est dans
+  délai de 11 minutes, et affichage du menu (`src/app/AffichageMenu.tsx` :
+  vue de la semaine, un onglet par jour, totaux comparés aux cibles). Le contrat de réponse est dans
   `src/lib/contracts/reponse.ts`.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
 - `scripts/menu.ts` — génère et affiche le menu d'un profil passé en
