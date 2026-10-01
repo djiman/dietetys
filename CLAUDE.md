@@ -23,8 +23,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM), phase 5 (évaluations), phase 6 (route API), phase 7 (frontend),
-  phase 8 (finalisation) ; 146 tests.
+  LLM), phase 5 (évaluations), phase 6 (route API), phase 7 (frontend), 146 tests.
 - MVP terminé. Les évolutions envisagées et le bilan sont dans la
   spécification ; les tâches passées dans la base Notion « Tâches
   Dietetys ».
