@@ -16,7 +16,7 @@ import { genererMenu } from "@/lib/llm";
  */
 
 const AVERTISSEMENT =
-  "Ce menu est indicatif et ne remplace pas un avis médical. Les cibles viennent d'une formule valable en moyenne, avec une marge d'erreur individuelle de l'ordre de ±10 %.";
+  "Ce menu est indicatif et ne remplace pas un avis médical. Les cibles viennent d'une formule valable en moyenne, avec une marge d'erreur individuelle de l'ordre de ±10 %.";
 
 const MESSAGES_LIMITE = {
   en_cours: "Une génération de menu est déjà en cours. Attendez qu'elle se termine.",
