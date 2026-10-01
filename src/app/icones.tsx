@@ -23,7 +23,7 @@ function Icone({ className = "size-5", children }: ProprietesIcone & { children:
   );
 }
 
-export function IconeFeuille(props: ProprietesIcone) {
+function IconeFeuille(props: ProprietesIcone) {
   return (
     <Icone {...props}>
       <path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Z" />

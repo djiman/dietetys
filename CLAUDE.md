@@ -23,16 +23,18 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
 
 - Fait : phase 0 (préparation), phase 1 (contrats Zod), phase 2 (domaine
   nutritionnel), phase 3 (validation de sortie), phase 4 (orchestrateur
-  LLM), phase 5 (évaluations), phase 6 (route API), phase 7 (frontend) ;
-  146 tests.
-- À faire : phase 8 (finalisation). L'ordre des tâches est dans la base
-  Notion « Tâches Dietetys ».
+  LLM), phase 5 (évaluations), phase 6 (route API), phase 7 (frontend),
+  phase 8 (finalisation) ; 146 tests.
+- MVP terminé. Les évolutions envisagées et le bilan sont dans la
+  spécification ; les tâches passées dans la base Notion « Tâches
+  Dietetys ».
 
 ## Structure
 
-- `src/lib/contracts/` — schémas Zod (entrée, cibles, menu). Source de
-  vérité unique du format des données ; réutilisés pour la validation
-  d'entrée, la définition d'outil du LLM et la validation de sortie.
+- `src/lib/contracts/` — schémas Zod (entrée, menu) et types partagés
+  (cibles, réponse de la route). Source de vérité unique du format des
+  données ; réutilisés pour la validation d'entrée, la définition d'outil
+  du LLM, la validation de sortie et le frontend.
 - `src/lib/domain/` — calcul nutritionnel : fonctions pures, sans appel
   réseau ni dépendance au LLM, entièrement testées.
 - `src/lib/validation/` — les quatre contrôles du menu produit par le LLM
@@ -55,6 +57,7 @@ macronutriments : ce sont des fonctions pures dans `src/lib/domain`.
   délai de 11 minutes, et affichage du menu (`src/app/AffichageMenu.tsx` :
   vue de la semaine, un onglet par jour, totaux comparés aux cibles). Le contrat de réponse est dans
   `src/lib/contracts/reponse.ts`.
+- `docs/captures/` — captures d'écran utilisées par le README.
 - `scripts/check-api.ts` — vérifie que la clé API Anthropic fonctionne.
 - `scripts/menu.ts` — génère et affiche le menu d'un profil passé en
   arguments (appel facturé, 1 à 6 minutes).

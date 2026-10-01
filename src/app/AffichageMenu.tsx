@@ -221,7 +221,7 @@ export function AffichageMenu({ reponse }: { reponse: ReponseMenu }) {
                 }`}
               >
                 <span className="text-sm font-semibold">Jour {jour.numero}</span>
-                <span className={`text-xs tabular-nums ${actif ? "text-emerald-50" : "text-zinc-500"}`}>
+                <span className={`text-xs whitespace-nowrap tabular-nums ${actif ? "text-emerald-50" : "text-zinc-500"}`}>
                   {formaterNombre(totaux_par_jour[index].kcal)} kcal
                 </span>
                 <span className={`text-xs tabular-nums ${actif ? "text-emerald-50" : "text-zinc-500"}`}>

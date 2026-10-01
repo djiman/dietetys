@@ -9,7 +9,7 @@ import { z } from "zod";
  * des aliments (voir src/lib/validation, phase 3).
  */
 
-export const TYPES_REPAS = [
+const TYPES_REPAS = [
   "petit_dejeuner",
   "dejeuner",
   "diner",
@@ -23,7 +23,7 @@ const TYPES_REPAS_OBLIGATOIRES: readonly TypeRepas[] = [
   "diner",
 ];
 
-export const alimentSchema = z.object({
+const alimentSchema = z.object({
   nom: z.string().min(1, "Le nom de l'aliment est requis."),
   quantite_g: z.number().positive("La quantité doit être positive."),
   kcal: z.number().nonnegative(),
@@ -33,7 +33,7 @@ export const alimentSchema = z.object({
 });
 export type Aliment = z.infer<typeof alimentSchema>;
 
-export const repasSchema = z.object({
+const repasSchema = z.object({
   type: z.enum(TYPES_REPAS),
   nom_plat: z.string().min(1, "Le nom du plat est requis."),
   aliments: z
@@ -42,7 +42,7 @@ export const repasSchema = z.object({
 });
 export type Repas = z.infer<typeof repasSchema>;
 
-export const jourSchema = z
+const jourSchema = z
   .object({
     numero: z.number().int().min(1).max(7),
     repas: z
