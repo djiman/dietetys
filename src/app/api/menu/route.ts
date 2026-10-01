@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { entreeSchema } from "@/lib/contracts";
+import { entreeSchema, type ReponseErreur, type ReponseMenu } from "@/lib/contracts";
 import {
   MESSAGE_REFUS_SECURITE,
   calculerCibles,
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
   // Une ligne par requête, en plus de celles de l'orchestrateur : compte aussi
   // les refus (400, 422, 429), qui n'appellent pas le modèle.
-  function repondre(statut: number, corps: object): Response {
+  function repondre(statut: number, corps: ReponseMenu | ReponseErreur): Response {
     console.log(
       JSON.stringify({
         evenement: "requete_menu",

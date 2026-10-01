@@ -128,7 +128,14 @@ function ChampNombre({
  * envoi. La validation native du navigateur est désactivée : ses messages
  * varient d'un navigateur à l'autre et doubleraient ceux du schéma.
  */
-export function FormulaireProfil({ onValider }: { onValider: (entree: Entree) => void }) {
+export function FormulaireProfil({
+  onValider,
+  desactive,
+}: {
+  onValider: (entree: Entree) => void;
+  /** Pendant une génération : empêche un second envoi. */
+  desactive: boolean;
+}) {
   const [erreurs, setErreurs] = useState<ErreursFormulaire>({});
 
   function soumettre(evenement: FormEvent<HTMLFormElement>) {
@@ -143,31 +150,33 @@ export function FormulaireProfil({ onValider }: { onValider: (entree: Entree) =>
   }
 
   return (
-    <form noValidate onSubmit={soumettre} className="flex flex-col gap-4">
-      <ChampListe nom="sexe" libelle="Sexe" options={SEXES} libelles={LIBELLES_SEXE} erreur={erreurs.sexe} />
-      <ChampNombre nom="age" libelle="Âge" unite="ans" erreur={erreurs.age} />
-      <ChampNombre nom="taille_cm" libelle="Taille" unite="cm" erreur={erreurs.taille_cm} />
-      <ChampNombre nom="poids_kg" libelle="Poids" unite="kg" decimal erreur={erreurs.poids_kg} />
-      <ChampListe
-        nom="activite"
-        libelle="Niveau d'activité"
-        options={NIVEAUX_ACTIVITE}
-        libelles={LIBELLES_ACTIVITE}
-        erreur={erreurs.activite}
-      />
-      <ChampListe
-        nom="objectif"
-        libelle="Objectif"
-        options={OBJECTIFS}
-        libelles={LIBELLES_OBJECTIF}
-        erreur={erreurs.objectif}
-      />
-      <button
-        type="submit"
-        className="mt-2 rounded-md bg-foreground px-4 py-2 font-medium text-background hover:opacity-90"
-      >
-        Générer mon menu
-      </button>
+    <form noValidate onSubmit={soumettre}>
+      <fieldset disabled={desactive} className="flex flex-col gap-4 disabled:opacity-60">
+        <ChampListe nom="sexe" libelle="Sexe" options={SEXES} libelles={LIBELLES_SEXE} erreur={erreurs.sexe} />
+        <ChampNombre nom="age" libelle="Âge" unite="ans" erreur={erreurs.age} />
+        <ChampNombre nom="taille_cm" libelle="Taille" unite="cm" erreur={erreurs.taille_cm} />
+        <ChampNombre nom="poids_kg" libelle="Poids" unite="kg" decimal erreur={erreurs.poids_kg} />
+        <ChampListe
+          nom="activite"
+          libelle="Niveau d'activité"
+          options={NIVEAUX_ACTIVITE}
+          libelles={LIBELLES_ACTIVITE}
+          erreur={erreurs.activite}
+        />
+        <ChampListe
+          nom="objectif"
+          libelle="Objectif"
+          options={OBJECTIFS}
+          libelles={LIBELLES_OBJECTIF}
+          erreur={erreurs.objectif}
+        />
+        <button
+          type="submit"
+          className="mt-2 rounded-md bg-foreground px-4 py-2 font-medium text-background hover:opacity-90"
+        >
+          {desactive ? "Génération en cours…" : "Générer mon menu"}
+        </button>
+      </fieldset>
     </form>
   );
 }

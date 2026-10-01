@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
-import { menuSchema, type Cibles, type Menu } from "@/lib/contracts";
+import { DELAI_GENERATION_MS, menuSchema, type Cibles, type Menu } from "@/lib/contracts";
 import { validerMenu, type NomControle } from "@/lib/validation";
 import { calculerCoutAppel } from "./cout";
 import {
@@ -34,13 +34,6 @@ const EFFORT = "medium";
  * mesurées pour une tentative). C'est DELAI_GENERATION_MS qui borne tout.
  */
 const DELAI_MS = 180_000;
-
-/**
- * Échéance de toute la génération : deux tentatives, réessais du SDK
- * compris. Le pire cas mesuré en phase 5 est de 392 s pour une seule
- * tentative ; le client HTTP doit attendre au moins aussi longtemps.
- */
-export const DELAI_GENERATION_MS = 600_000;
 
 export type RaisonEchec =
   | "validation"
